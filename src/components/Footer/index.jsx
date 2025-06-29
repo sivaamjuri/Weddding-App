@@ -5,8 +5,16 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <img src="../public\footer-shape-1 (1).png" alt="footer-shape-1" className="footer-shape-1" />
-        <img src="../public\footer-shape-2 (1).png" alt="footer-shape-2" className="footer-shape-2" />
+        <img
+          src="/footer-shape-1 (1).png"
+          alt="footer-shape-1"
+          className="footer-shape-1"
+        />
+        <img
+          src="/footer-shape-2 (1).png"
+          alt="footer-shape-2"
+          className="footer-shape-2"
+        />
         <h4 className="footer-quote">
           Let us come together in the spirit of love and joy, as we embark on
           this beautiful journey of togetherness. Your presence will add warmth

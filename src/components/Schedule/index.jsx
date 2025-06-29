@@ -8,7 +8,7 @@ class ScheduleCard extends Component {
     return (
       <article className="schedule-card">
         <img
-          src="../public/story-shape.png"
+          src="/story-shape.png"
           alt="card-flower-bg"
           className="schedule-card-bg"
         />

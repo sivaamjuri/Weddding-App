@@ -8,7 +8,7 @@ class VenueCard extends Component {
     return (
       <article className="venue-card">
         <img
-          src="../public/story-shape.png"
+          src="/story-shape.png"
           alt="Flower-frame"
           className="venue-card-bg"
         />
@@ -32,7 +32,7 @@ class VenueSection extends Component {
         date: "Monday, 12 Apr. 2024 1:00 PM – 2:30 PM",
         address:
           "Blue Ginger Lawn Taj West End 25,Race Course Road, Bengaluru, 560001",
-        imageSrc: "../public/story-six-1.png",
+        imageSrc: "/story-six-1.png",
         alt: "reception-1",
       },
       {
@@ -40,7 +40,7 @@ class VenueSection extends Component {
         date: "Monday, 15 Apr. 2024 1:00 PM – 2:30 PM",
         address:
           "Blue Ginger Lawn Taj West End 25,Race Course Road, Bengaluru, 560001",
-        imageSrc: "../public/story-six-2.png",
+        imageSrc: "/story-six-2.png",
         alt: "reception-2",
       },
       {
@@ -48,7 +48,7 @@ class VenueSection extends Component {
         date: "Monday, 25 Apr. 2025 1:00 PM – 2:30 PM",
         address:
           "Blue Ginger Lawn Taj West End 25,Race Course Road, Bengaluru, 560001",
-        imageSrc: "../public/story-six-3.png",
+        imageSrc: "/story-six-3.png",
         alt: "reception-3",
       },
     ];
@@ -69,12 +69,13 @@ class VenueSection extends Component {
             />
           ))}
         </div>
-        <div className="maps-container"><img
-          src="../public/maps.png"
-          alt="Wedding venue location map"
-          className="venue-map"
-        /></div>
-        
+        <div className="maps-container">
+          <img
+            src="/maps.png"
+            alt="Wedding venue location map"
+            className="venue-map"
+          />
+        </div>
       </section>
     );
   }
