@@ -1,0 +1,21 @@
+.album-container {
+  background-color: #f1f3ee;
+  text-align: center;
+  
+}
+.photo-book {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.spiral{
+    height: 350px;
+}
+.title{
+    padding: 35px;
+    font-family: sail;
+    font-size: 45px;
+}
+.album-photo{
+    height: 350px;
+}

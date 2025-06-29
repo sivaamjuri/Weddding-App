@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-left: auto;
+  height: 848px;
+  right: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sail", system-ui;
+  font-weight: bold;
+}
+
+.hero-bg-image {
+  height: 20px;
+  width: 10px;
+}
+
+.hero-side-image {
+  height: 10px;
+  width: 10px;
+}
+
+.hero-title {
+  color: black;
+  text-align: center;
+  font-size: 62px;
+  font-weight: normal;
+  position: absolute;
+  z-index: 3;
+  top: 290px;
+}
+
+.hero-subtitle {
+  color: #5c5c5c;
+  text-align: center;
+  font-size: 20px;
+  font-weight: normal;
+  position: absolute;
+  z-index: 3;
+  top: 379px;
+}
+
+.hero-decorative {
+  position: absolute;
+  width: 100px;
+  height: 49px;
+  z-index: 3;
+  top: 425px;
+}
+
+.countdown {
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  z-index: 3;
+  top: 496px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.countdown-number {
+  color: #586245;
+  text-align: center;
+  font-size: 62px;
+  font-weight: normal;
+}
+
+.countdown-label {
+  color: #5c5c5c;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.hero {
+  height: 600px;
+}
+
+.hero-image {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 350px;
+  z-index: 0;
+}
+
+.hero-flower-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 20px;
+  left: 100px;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 36px;
+  width: 90%;
+  top: 180px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  width: 90%;
+  top: 240px;
+}
+
+.hero-decorative {
+  width: 100px;
+  height: 35px;
+  top: 280px;
+}
+
+.countdown {
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  top: 320px;
+}
+
+.countdown-number {
+  font-size: 36px;
+}
+
+.countdown-label {
+  font-size: 12px;
+}

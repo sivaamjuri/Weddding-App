@@ -1,0 +1,126 @@
+.rsvp-section {
+  position: relative;
+  height: 705px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 160px;
+  margin-bottom: 150px;
+}
+
+.rsvp-bg {
+  position: absolute;
+  width: 1318px;
+  height: 705px;
+  z-index: 1;
+  left: 61px;
+  top: 0;
+}
+
+.rsvp-form {
+  width: 545px;
+  height: 499px;
+  z-index: 2;
+  position: relative;
+  overflow-y: auto;
+  background-color: white;
+  padding: 57px 52px;
+}
+
+.rsvp-title {
+  color: black;
+  text-align: center;
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 57px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.form-label {
+  color: #5c5c5c;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #5c5c5c;
+  font-size: 16px;
+}
+
+.form-underline {
+  width: 441px;
+  height: 1px;
+  background-color: #bdbebc;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.radio-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 52px;
+  border: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.radio-input {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #bdbebc;
+  border-radius: 50%;
+}
+
+.radio-label {
+  color: #5c5c5c;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.submit-button {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  width: 141px;
+  height: 43px;
+  cursor: pointer;
+  background-color: #586245;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #4a5339;
+}
