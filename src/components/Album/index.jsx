@@ -9,9 +9,7 @@ class Album extends Component {
 
         <div className="photo-book">
           <img src="/Group.png" alt="Left page" className="album-photo" />
-
           <img src="/Albumpic.png" alt="Spiral binding" className="spiral" />
-
           <img
             src="/flowershape.png"
             alt="Right page"

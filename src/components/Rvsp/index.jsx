@@ -1,58 +1,6 @@
 import { Component } from "react";
 import "./index.css";
 
-// Reusable input field (text, email, number)
-const FormField = ({ id, label, type = "text", value, onChange, error }) => (
-  <div className="form-group">
-    <label htmlFor={id} className="form-label">{label}</label>
-    <input
-      id={id}
-      type={type}
-      value={value}
-      onChange={(e) => onChange(id, e.target.value)}
-      className="form-input"
-    />
-    <div className="form-underline" />
-    {error && <div className="error-message">{error}</div>}
-  </div>
-);
-
-// Reusable radio group
-const RadioGroup = ({ value, onChange, error }) => (
-  <fieldset className="radio-group">
-    <legend className="sr-only">Are you attending?</legend>
-    <div className="radio-option">
-      <input
-        type="radio"
-        id="attending-yes"
-        name="attending"
-        value="yes"
-        checked={value === "yes"}
-        onChange={(e) => onChange("attending", e.target.value)}
-        className="radio-input"
-      />
-      <label htmlFor="attending-yes" className="radio-label">
-        Yes, I will be there
-      </label>
-    </div>
-    <div className="radio-option">
-      <input
-        type="radio"
-        id="attending-no"
-        name="attending"
-        value="no"
-        checked={value === "no"}
-        onChange={(e) => onChange("attending", e.target.value)}
-        className="radio-input"
-      />
-      <label htmlFor="attending-no" className="radio-label">
-        Sorry, I can't come
-      </label>
-    </div>
-    {error && <div className="error-message">{error}</div>}
-  </fieldset>
-);
-
 class RSVPSection extends Component {
   state = {
     formData: {
@@ -62,13 +10,20 @@ class RSVPSection extends Component {
       guests: "",
       events: "",
     },
+    submittedData: null,
     errors: {},
   };
 
   handleInputChange = (field, value) => {
     this.setState((prevState) => ({
-      formData: { ...prevState.formData, [field]: value },
-      errors: { ...prevState.errors, [field]: "" },
+      formData: {
+        ...prevState.formData,
+        [field]: value,
+      },
+      errors: {
+        ...prevState.errors,
+        [field]: "",
+      },
     }));
   };
 
@@ -89,23 +44,13 @@ class RSVPSection extends Component {
     e.preventDefault();
     if (!this.validateForm()) return;
 
-    console.log("RSVP submitted:", this.state.formData);
-    alert("Thank you for your RSVP!");
-
     this.setState({
-      formData: {
-        name: "",
-        email: "",
-        attending: "",
-        guests: "",
-        events: "",
-      },
-      errors: {},
+      submittedData: { ...this.state.formData },
     });
   };
 
   render() {
-    const { formData, errors } = this.state;
+    const { formData, errors, submittedData } = this.state;
 
     return (
       <section id="rsvp" className="rsvp-section">
@@ -113,48 +58,122 @@ class RSVPSection extends Component {
         <form onSubmit={this.handleSubmit} className="rsvp-form">
           <h2 className="rsvp-title">Are You Attending?</h2>
 
-          <FormField
-            id="name"
-            label="Name"
-            value={formData.name}
-            onChange={this.handleInputChange}
-            error={errors.name}
-          />
+          {/* Name Field */}
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              value={formData.name}
+              onChange={(e) => this.handleInputChange("name", e.target.value)}
+              className="form-input"
+            />
+            <div className="form-underline" />
+            {errors.name && <div className="error-message">{errors.name}</div>}
+          </div>
 
-          <FormField
-            id="email"
-            label="Email"
-            type="email"
-            value={formData.email}
-            onChange={this.handleInputChange}
-            error={errors.email}
-          />
+          {/* Email Field */}
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              value={formData.email}
+              onChange={(e) => this.handleInputChange("email", e.target.value)}
+              className="form-input"
+            />
+            <div className="form-underline" />
+            {errors.email && (
+              <div className="error-message">{errors.email}</div>
+            )}
+          </div>
 
-          <RadioGroup
-            value={formData.attending}
-            onChange={this.handleInputChange}
-            error={errors.attending}
-          />
+          {/* Attending Radio Group */}
+          <fieldset className="radio-group">
+            <legend className="sr-only">Are you attending?</legend>
+            <div className="radio-option">
+              <input
+                type="radio"
+                id="attending-yes"
+                name="attending"
+                value="yes"
+                checked={formData.attending === "yes"}
+                onChange={(e) =>
+                  this.handleInputChange("attending", e.target.value)
+                }
+                className="radio-input"
+              />
+              <label htmlFor="attending-yes" className="radio-label">
+                Yes, I will be there
+              </label>
+            </div>
+            <div className="radio-option">
+              <input
+                type="radio"
+                id="attending-no"
+                name="attending"
+                value="no"
+                checked={formData.attending === "no"}
+                onChange={(e) =>
+                  this.handleInputChange("attending", e.target.value)
+                }
+                className="radio-input"
+              />
+              <label htmlFor="attending-no" className="radio-label">
+                Sorry, I can't come
+              </label>
+            </div>
+            {errors.attending && (
+              <div className="error-message">{errors.attending}</div>
+            )}
+          </fieldset>
 
-          <FormField
-            id="guests"
-            label="Number Of Guests"
-            type="number"
-            value={formData.guests}
-            onChange={this.handleInputChange}
-          />
+          {/* Number of Guests */}
+          <div className="form-group">
+            <label htmlFor="guests" className="form-label">
+              Number Of Guests
+            </label>
+            <input
+              id="guests"
+              type="number"
+              value={formData.guests}
+              onChange={(e) => this.handleInputChange("guests", e.target.value)}
+              className="form-input"
+            />
+            <div className="form-underline" />
+          </div>
 
-          <FormField
-            id="events"
-            label="What Will You Be Attending"
-            value={formData.events}
-            onChange={this.handleInputChange}
-          />
+          {/* Events Field */}
+          <div className="form-group">
+            <label htmlFor="events" className="form-label">
+              What Will You Be Attending
+            </label>
+            <input
+              id="events"
+              type="text"
+              value={formData.events}
+              onChange={(e) => this.handleInputChange("events", e.target.value)}
+              className="form-input"
+            />
+            <div className="form-underline" />
+          </div>
 
           <button type="submit" className="submit-button">
             RSVP
           </button>
         </form>
+
+        {/* Optional: Display submitted data below the form */}
+        {submittedData && (
+          <div className="submitted-info">
+            <h3>Submitted Data</h3>
+            <pre>{JSON.stringify(submittedData, null, 2)}</pre>
+          </div>
+        )}
       </section>
     );
   }

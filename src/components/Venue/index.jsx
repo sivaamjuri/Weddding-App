@@ -6,7 +6,7 @@ class VenueCard extends Component {
     const { title, date, address, imageSrc } = this.props;
 
     return (
-      <article className="venue-card">
+      <article id="venue" className="venue-card">
         <img
           src="/story-shape.png"
           alt="Flower-frame"

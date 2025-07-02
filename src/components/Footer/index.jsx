@@ -4,7 +4,7 @@ import "./index.css";
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer">
+      <footer id="gift-registry" className="footer">
         <img
           src="/footer-shape-1 (1).png"
           alt="footer-shape-1"
@@ -31,7 +31,7 @@ class Footer extends Component {
           <a href="#rsvp" className="footer-link">
             RSVP
           </a>
-          <a href="#couple" className="footer-link">
+          <a href="#venue" className="footer-link">
             GALLERY
           </a>
           <a href="#gift-registry" className="footer-link">

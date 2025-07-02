@@ -13,8 +13,8 @@ class Couple extends Component {
           </p>
         </article>
         <div>
-          <img src="/story-shape.png" alt="" className="couple-bg-1" />
-          <img src="/indain-couple.png" alt="" className="couple-bg-2" />
+          <img src="/story-shape.png" alt="couple-image-1" className="couple-bg-1" />
+          <img src="/indain-couple.png" alt="couple-image-2" className="couple-bg-2" />
         </div>
         <article className="couple-article couple-article-2">
           <h2 className="couple-name">Joya Syarma</h2>

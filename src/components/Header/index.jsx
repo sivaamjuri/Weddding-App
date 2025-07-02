@@ -18,7 +18,7 @@ class Header extends Component {
           <a href="#rsvp" className="nav-link">
             RSVP
           </a>
-          <a href="#gallery" className="nav-link">
+          <a href="#venue" className="nav-link">
             GALLERY
           </a>
           <a href="#gift-registry" className="nav-link">
